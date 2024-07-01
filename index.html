@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Failure Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" step="any" name="age" required>
+            </div>
+            <div class="input-group">
+                <label for="anaemia">Anaemia:</label>
+                <input type="number" step="any" name="anaemia" required>
+            </div>
+            <div class="input-group">
+                <label for="creatinine_phosphokinase">Creatinine Phosphokinase:</label>
+                <input type="number" step="any" name="creatinine_phosphokinase" required>
+            </div>
+            <div class="input-group">
+                <label for="diabetes">Diabetes:</label>
+                <input type="number" step="any" name="diabetes" required>
+            </div>
+            <div class="input-group">
+                <label for="ejection_fraction">Ejection Fraction:</label>
+                <input type="number" step="any" name="ejection_fraction" required>
+            </div>
+            <div class="input-group">
+                <label for="high_blood_pressure">High Blood Pressure:</label>
+                <input type="number" step="any" name="high_blood_pressure" required>
+            </div>
+            <div class="input-group">
+                <label for="platelets">Platelets:</label>
+                <input type="number" step="any" name="platelets" required>
+            </div>
+            <div class="input-group">
+                <label for="serum_creatinine">Serum Creatinine:</label>
+                <input type="number" step="any" name="serum_creatinine" required>
+            </div>
+            <div class="input-group">
+                <label for="serum_sodium">Serum Sodium:</label>
+                <input type="number" step="any" name="serum_sodium" required>
+            </div>
+            <div class="input-group">
+                <label for="sex">Sex:</label>
+                <input type="number" step="any" name="sex" required>
+            </div>
+            <div class="input-group">
+                <label for="smoking">Smoking:</label>
+                <input type="number" step="any" name="smoking" required>
+            </div>
+            <div class="input-group">
+                <label for="time">Time:</label>
+                <input type="number" step="any" name="time" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
